@@ -1,0 +1,54 @@
+" make cursor Thick
+set guicursor=
+" automatic scroll to keep you 8 lines from the end of the file  
+set scrolloff=8
+" show linenumber
+set number
+" show relative number compare to current line your in
+set relativenumber
+" set smartindent
+" set expandtab
+" set shiftwidth=4
+" set tabstop=4 softtabstop=4
+" to show vim keystrock
+set showcmd
+
+call plug#begin()
+
+" List your plugins here
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'jremmen/vim-ripgrep'
+
+call plug#end()
+
+" color setting
+set termguicolors     " enable true colors support
+colorscheme ayu
+let ayucolor="dark"   " for dark version of theme
+
+" Keymap
+let mapleader =  " "
+" Project View = pv
+nnoremap <leader>pv :Vex<CR>
+" Source the vimrc
+nnoremap <leader><CR> :so ~/.vimrc<CR>
+" Open project file if it have git repo for FuzyFinder Plugin
+nnoremap <C-p> :GFiles<CR>
+" Open project files even if it doesn't have git file FuzyFinder Plugin
+nnoremap <leader>pf :Files<CR>
+" Switch back and forth in quicklist
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>
+" Yank into the clipboard
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+" Replace Paste without losing your original text 
+vnoremap <leader>p "_dP
+" Yank the whole file into the clipboard
+nnoremap <leader>Y gg"+yG
+" Move the highlighted area
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
