@@ -187,7 +187,8 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 -- Run the current python file
 -- vim.keymap.set('n', '<leader>rp', ':let @+ = expand("%")<CR>:Vex<CR><C-w>r:term<CR>ipython ./<C-\\><C-N>pi<CR><Esc>')
-vim.keymap.set('n', '<leader>rp', ':let @+ = expand("%")<CR>:term<CR>ipython ./<C-\\><C-N>pi<CR><Esc>')
+vim.keymap.set('n', '<leader>rp', ':w<CR>:let @+ = expand("%")<CR>:term<CR>ipython ./<C-\\><C-N>pi<CR>')
+-- vim.keymap.set('n', '<leader>rp', ':w<CR>:let @+ = expand("%")<CR>:term<CR>ipython ./<C-\\><C-N>pi<CR><Esc>')
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
