@@ -190,6 +190,10 @@ vim.keymap.set('v', 'K', ':m-2<CR>gv=gv')
 -- Move and Recenter
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+-- go to tab
+vim.keymap.set('n', '<leader>1', '1gt')
+vim.keymap.set('n', '<leader>2', '2gt')
+vim.keymap.set('n', '<leader>3', '3gt')
 -- Run the current python file
 -- vim.keymap.set('n', '<leader>rp', ':let @+ = expand("%")<CR>:Vex<CR><C-w>r:term<CR>ipython ./<C-\\><C-N>pi<CR><Esc>')
 vim.keymap.set('n', '<leader>rp', ':w<CR>:let @+ = expand("%")<CR>:term<CR>ipython ./<C-\\><C-N>pi<CR>')
@@ -1011,7 +1015,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
